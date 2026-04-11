@@ -1,21 +1,183 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h1 class="text-6xl font-bold mb-6">Hi, I'm Zachary Vincent</h1>
-    <p class="text-2xl text-zinc-600 dark:text-zinc-400 mb-8">
-        Transitioning technologist → Software Engineer
-    </p>
-    <p class="text-lg max-w-2xl mx-auto text-zinc-600 dark:text-zinc-400">
-        Passionate about building intuitive backend and full-stack solutions.
-        Currently strengthening my skills with Flask, Tailwind, and modern web technologies.
-    </p>
+<div class="max-w-5xl mx-auto px-6">
 
-    <div class="mt-12">
-        <a href="/projects"
-            class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl text-lg font-medium transition-colors">
-            View My Projects
-        </a>
-    </div>
+    <!-- HERO / HOME Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-3xl">
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">
+                Hi, I'm <span class="text-emerald-600 dark:text-emerald-400">Zachary Vincent</span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-zinc-600 dark:text-zinc-400 mb-8">
+                Software Engineer in training • Backend &amp; Full-Stack
+            </p>
+            <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mb-12">
+                Motivated technologist with strong foundations in Python, SQL, and problem-solving.
+                Passionate about building intuitive, high-impact products — especially in fintech and startup tools.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects"
+                    class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl text-lg font-medium transition-all">
+                    View My Projects
+                </a>
+                <a href="/static/resume.pdf" target="_blank"
+                    class="inline-block border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 px-8 py-4 rounded-2xl text-lg font-medium transition-all">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section id="about" class="py-24 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-3xl">
+            <h2 class="text-4xl font-bold mb-10">About Me</h2>
+            <div class="prose dark:prose-invert text-lg leading-relaxed">
+                <p class="mb-6">
+                    I'm a motivated technologist transitioning into software engineering with a strong foundation
+                    in programming, data systems, and problem-solving.
+                </p>
+                <p>
+                    I recently completed Harvard CS50’s Computer Science CS50X, Introduction to Programming with Python,
+                    and Cybersecurity certifications. I'm experienced in managing complex operational systems, analyzing
+                    data,
+                    troubleshooting issues, and delivering user-focused solutions in fast-paced environments.
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <a href="#skills" class="text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+                    View full skills &amp; certifications →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS Section -->
+    <section id="projects" class="py-24 bg-zinc-100 dark:bg-zinc-900 -mx-6 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4">Projects</h2>
+
+            <!-- "Now" Section -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <span class="inline-block w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></span>
+                    What I'm Working On Now
+                </h3>
+                <div class="bg-white dark:bg-zinc-800 p-8 rounded-3xl border border-zinc-200 dark:border-zinc-700">
+                    <p class="text-zinc-600 dark:text-zinc-400">
+                        Currently building this portfolio website from scratch using Flask, Tailwind CSS, and vanilla
+                        JavaScript.
+                        This project is helping me practice full project setup, deployment, Git workflow, and creating a
+                        sleek user experience.
+                    </p>
+                    <p class="mt-4 text-sm text-emerald-600 dark:text-emerald-400">
+                        Next: Add a contact form that actually sends emails + individual project detail pages.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project Cards -->
+            <h3 class="text-2xl font-semibold mb-8">Recent Projects</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <div
+                    class="bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700">
+                    <div class="h-48 bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center">
+                        <span class="text-6xl"><img src="static/images/OTWSS.jpg" alt="🎮"></img></span>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-xl mb-3">One Trick Wizard (itch.io)</h4>
+                        <p class="text-zinc-600 dark:text-zinc-400 mb-6">
+                            A game I built in my free time over 2 weeks for PirateJam 17. Hosted live or for
+                            download(for full experience) on itch.io.
+                        </p>
+                        <a href="https://gdzac.itch.io/one-trick-wizard" target="_blank"
+                            class="inline-block text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
+                            Play on itch.io →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Placeholder for future projects -->
+                <div
+                    class="bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700 opacity-75">
+                    <div class="h-48 bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center text-4xl">
+                        🚧
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-semibold text-xl mb-3">More Projects Coming Soon</h4>
+                        <p class="text-zinc-600 dark:text-zinc-400">
+                            I'll be adding full-stack web apps, data tools, and fintech-related projects here as I build
+                            them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS Section -->
+    <section id="skills" class="py-24">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12">Skills &amp; Technologies</h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Programming</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center gap-3">✅ Python (strong foundation from CS50)</li>
+                        <li class="flex items-center gap-3">✅ SQL</li>
+                        <li class="flex items-center gap-3">✅ HTML / CSS</li>
+                        <li class="flex items-center gap-3">✅ JavaScript (learning)</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Other Strengths</h3>
+                    <ul class="space-y-3 text-lg">
+                        <li class="flex items-center gap-3">✅ Problem-solving &amp; troubleshooting complex systems</li>
+                        <li class="flex items-center gap-3">✅ Data analysis &amp; inventory management</li>
+                        <li class="flex items-center gap-3">✅ User empathy &amp; requirements gathering</li>
+                        <li class="flex items-center gap-3">✅ Quick learner (Haskell, React, TypeScript planned)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold mb-6">Certifications</h3>
+                <ul class="space-y-4">
+                    <li>Harvard CS50’s Introduction to Programming with Python (2024)</li>
+                    <li>Harvard CS50’s Computer Science CS50X (2025)</li>
+                    <li>Harvard CS50’s Introduction to Cybersecurity (2023)</li>
+                    <li>Google Cybersecurity Certificate (2023)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="py-24 border-t border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Let's Connect</h2>
+            <p class="text-lg text-zinc-600 dark:text-zinc-400 mb-12">
+                I'm currently open to backend or full-stack opportunities. Feel free to reach out!
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:Zac9Vincent@hotmail.com"
+                    class="bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-10 py-4 rounded-2xl font-medium">
+                    Send me an email
+                </a>
+                <a href="https://linkedin.com/in/zachary-vincent-647381153" target="_blank"
+                    class="border border-zinc-300 dark:border-zinc-700 px-10 py-4 rounded-2xl font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
 </div>
 {% endblock %}

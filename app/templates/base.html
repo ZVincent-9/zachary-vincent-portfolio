@@ -31,24 +31,24 @@
         class="fixed top-0 left-0 right-0 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-            <!-- Logo / Name -->
-            <div class="text-2xl font-bold tracking-tight">
+            <!-- Logo -->
+            <a href="/" class="text-2xl font-bold tracking-tight hover:text-emerald-600 transition-colors">
                 Zachary Vincent
-            </div>
+            </a>
 
-            <!-- Desktop Navigation -->
+            <!-- Desktop Navigation (anchor links) -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="/" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</a>
-                <a href="/about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About</a>
-                <a href="/projects"
+                <a href="#home" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About</a>
+                <a href="#projects"
                     class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Projects</a>
-                <a href="/skills"
+                <a href="#skills"
                     class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Skills</a>
-                <a href="/contact"
+                <a href="#contact"
                     class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Contact</a>
             </div>
 
-            <!-- Right side: Theme toggle + Hamburger -->
+            <!-- Right side -->
             <div class="flex items-center gap-4">
                 <!-- Theme Toggle -->
                 <button id="theme-toggle"
@@ -56,7 +56,7 @@
                     <span id="theme-icon" class="text-xl">🌙</span>
                 </button>
 
-                <!-- Hamburger Menu -->
+                <!-- Hamburger -->
                 <button id="hamburger"
                     class="md:hidden p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
@@ -68,15 +68,15 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (hidden by default) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu"
             class="hidden md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800">
             <div class="px-6 py-6 flex flex-col gap-4 text-sm font-medium">
-                <a href="/" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Home</a>
-                <a href="/about" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">About</a>
-                <a href="/projects" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Projects</a>
-                <a href="/skills" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Skills</a>
-                <a href="/contact" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Contact</a>
+                <a href="#home" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Home</a>
+                <a href="#about" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">About</a>
+                <a href="#projects" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Projects</a>
+                <a href="#skills" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Skills</a>
+                <a href="#contact" class="py-2 hover:text-emerald-600 dark:hover:text-emerald-400">Contact</a>
             </div>
         </div>
     </nav>
