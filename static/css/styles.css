@@ -1,0 +1,4 @@
+/* Custom styles beyond Tailwind will go here */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
