@@ -29,7 +29,7 @@ function initTheme() {
     });
 }
 
-// Hamburger Menu
+// Hamburger Menu - always active
 function initHamburger() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
