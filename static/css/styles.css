@@ -1,11 +1,65 @@
-/* Custom styles beyond Tailwind will go here */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ============== BALANCED LIGHT + DARK MODE BACKGROUNDS ============== */
 
-/* Dropdown menu smooth animation */
-#dropdown-menu {
-    transform: scale(0.95);
-    opacity: 0;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+/* Light Mode - Soft edges */
+body {
+    background-color: #f4f4f5 !important;
+}
+
+/* All sections default to white in light mode */
+section {
+    background-color: #ffffff !important;
+}
+
+/* Light mode subtle variation */
+#about,
+#skills {
+    background-color: #f9fafb !important;
+}
+
+#projects {
+    background-color: #f1f1f3 !important;
+}
+
+/* Dark Mode - Rich dark sections */
+.dark body {
+    background-color: #0a0a0a !important;
+}
+
+.dark section {
+    background-color: #18181b !important;
+}
+
+.dark #projects {
+    background-color: #27272a !important;
+}
+
+/* Fix About and Skills specifically in both modes */
+#about,
+#skills {
+    background-color: #f9fafb !important;
+}
+
+.dark #about,
+.dark #skills {
+    background-color: #18181b !important;
+}
+
+/* Inner containers */
+#about>div,
+#skills>div,
+#about .max-w-3xl,
+#skills .max-w-4xl {
+    background-color: transparent !important;
+}
+
+/* Cards and boxes */
+.card,
+.bg-white {
+    background-color: #ffffff !important;
+}
+
+.dark .card,
+.dark .bg-white,
+.dark .bg-zinc-800 {
+    background-color: #27272a !important;
 }

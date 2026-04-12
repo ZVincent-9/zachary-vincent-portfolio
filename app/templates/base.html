@@ -24,7 +24,7 @@
     </script>
 </head>
 
-<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 min-h-screen transition-colors duration-300">
+<body class="bg-zinc-50 dark:bg-zinc-950 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
 
     <!-- Fixed Navbar -->
     <nav
@@ -83,12 +83,12 @@
     </nav>
 
     <!-- Main Content Area -->
-    <main class="pt-20">
+    <main class="pt-20 bg-transparent dark:bg-transparent">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-zinc-100 dark:bg-zinc-900 py-12 border-t border-zinc-200 dark:border-zinc-800">
+    <footer class="dark:bg-zinc-950 py-12 border-t border-zinc-200 dark:border-zinc-800">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
 
