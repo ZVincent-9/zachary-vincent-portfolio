@@ -1,16 +1,14 @@
-/* ============== BALANCED LIGHT + DARK MODE BACKGROUNDS ============== */
+/* ============== BALANCED DARK MODE VARIATION ============== */
 
-/* Light Mode - Soft edges */
+/* Light Mode - Clean and soft */
 body {
     background-color: #f4f4f5 !important;
 }
 
-/* All sections default to white in light mode */
 section {
     background-color: #ffffff !important;
 }
 
-/* Light mode subtle variation */
 #about,
 #skills {
     background-color: #f9fafb !important;
@@ -20,39 +18,43 @@ section {
     background-color: #f1f1f3 !important;
 }
 
-/* Dark Mode - Rich dark sections */
+/* Dark Mode - Rich but balanced */
 .dark body {
     background-color: #0a0a0a !important;
 }
 
+/* Base dark color for most sections */
 .dark section {
     background-color: #18181b !important;
 }
 
+/* Slight variation for visual interest */
+.dark #home {
+    background-color: #111113 !important;
+    /* Deeper for hero */
+}
+
+.dark #about {
+    background-color: #202024 !important;
+    /* Slightly lighter than base */
+}
+
 .dark #projects {
     background-color: #27272a !important;
+    /* Medium contrast */
 }
 
-/* Fix About and Skills specifically in both modes */
-#about,
-#skills {
-    background-color: #f9fafb !important;
-}
-
-.dark #about,
 .dark #skills {
+    background-color: #202024 !important;
+    /* Slightly lighter than base */
+}
+
+.dark #contact {
     background-color: #18181b !important;
+    /* Base dark */
 }
 
-/* Inner containers */
-#about>div,
-#skills>div,
-#about .max-w-3xl,
-#skills .max-w-4xl {
-    background-color: transparent !important;
-}
-
-/* Cards and boxes */
+/* Cards */
 .card,
 .bg-white {
     background-color: #ffffff !important;
