@@ -5,7 +5,7 @@ function initTheme() {
 
     if (!toggleBtn || !icon) return;
 
-    // Set initial theme based on system preference or saved choice
+    // Set initial theme
     if (localStorage.theme === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -15,7 +15,6 @@ function initTheme() {
         icon.textContent = '🌙';
     }
 
-    // Toggle on click
     toggleBtn.addEventListener('click', () => {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
@@ -29,19 +28,57 @@ function initTheme() {
     });
 }
 
-// Hamburger Menu - always active
+// Hamburger Dropdown Menu
 function initHamburger() {
     const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.getElementById('dropdown-menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
 
-    if (!hamburger || !mobileMenu) return;
+    if (!hamburger || !menu) return;
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    let isOpen = false;
+
+    function toggleMenu() {
+        isOpen = !isOpen;
+
+        if (isOpen) {
+            menu.classList.remove('hidden');
+            // Small delay for smooth animation
+            setTimeout(() => {
+                menu.style.transform = 'scale(1)';
+                menu.style.opacity = '1';
+            }, 10);
+        } else {
+            menu.style.transform = 'scale(0.95)';
+            menu.style.opacity = '0';
+            setTimeout(() => {
+                menu.classList.add('hidden');
+            }, 200);
+        }
+    }
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();   // Prevent click from immediately closing
+        toggleMenu();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (isOpen && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+            toggleMenu();
+        }
+    });
+
+    // Close when clicking any link inside the menu
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isOpen) toggleMenu();
+        });
     });
 }
 
-// Run when page is fully loaded
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initHamburger();

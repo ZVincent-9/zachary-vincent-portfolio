@@ -58,7 +58,19 @@
     <!-- PROJECTS Section -->
     <section id="projects" class="py-24 bg-zinc-100 dark:bg-zinc-900 -mx-6 px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4">Projects</h2>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">Projects</h2>
+                    <p class="text-zinc-600 dark:text-zinc-400">Things I've built and am currently working on</p>
+                </div>
+
+                <!-- GitHub Button -->
+                <a href="https://github.com/ZVincent-9" target="_blank"
+                    class="mt-6 md:mt-0 inline-flex items-center gap-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-black dark:hover:bg-zinc-100 px-7 py-4 rounded-3xl font-medium transition-all">
+                    <span class="text-xl">🐙</span>
+                    View All Projects on GitHub
+                </a>
+            </div>
 
             <!-- "Now" Section -->
             <div class="mb-16">
@@ -163,9 +175,23 @@
         <div class="max-w-2xl mx-auto px-6">
             <h2 class="text-4xl font-bold mb-8 text-center">Get In Touch</h2>
             <p class="text-center text-zinc-600 dark:text-zinc-400 mb-12">
-                I'm currently open to opportunities. Send me a message directly!
+                I'm currently open to backend or full-stack opportunities.
             </p>
 
+            <!-- Social / Direct Links -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <a href="mailto:Zac9Vincent@hotmail.com"
+                    class="flex items-center justify-center gap-3 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-8 py-4 rounded-3xl transition-all text-lg">
+                    ✉️ Zac9Vincent@hotmail.com
+                </a>
+
+                <a href="https://linkedin.com/in/zachary-vincent-647381153" target="_blank"
+                    class="flex items-center justify-center gap-3 border border-zinc-300 dark:border-zinc-700 hover:border-zinc-400 px-8 py-4 rounded-3xl transition-all text-lg">
+                    LinkedIn
+                </a>
+            </div>
+
+            <!-- Contact Form -->
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
             {% for category, message in messages %}
