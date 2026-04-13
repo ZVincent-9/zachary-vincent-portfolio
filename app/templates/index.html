@@ -61,6 +61,7 @@
 <!-- PROJECTS -->
 <section id="projects" class="dark:bg-zinc-950">
     <div class="max-w-5xl mx-auto px-6 py-20">
+
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
                 <h2 class="text-4xl font-bold mb-4">Projects</h2>
@@ -92,43 +93,62 @@
             </div>
         </div>
 
-        <!-- Project Cards -->
-        <h3 class="text-2xl font-semibold mb-8">Recent Projects</h3>
+        <!-- Recent Projects -->
+        <h3 class="text-2xl font-semibold mb-10">Recent Projects</h3>
+
         <div class="grid md:grid-cols-2 gap-8">
 
-            <!-- Game Card -->
+            <!-- One Trick Wizard Card -->
             <div
-                class="bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700 card">
-                <div class="h-48 bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center overflow-hidden">
-                    <img src="/static/images/OTWSS.jpg" alt="One Trick Wizard" class="h-full w-full object-cover">
+                class="group bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700 card transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl">
+
+                <!-- Screenshot -->
+                <div class="relative h-72 bg-zinc-900 overflow-hidden">
+                    <img src="/static/images/OTWSS.jpg" alt="One Trick Wizard gameplay"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+
+                    <!-- Tech tags -->
+                    <div
+                        class="absolute top-4 left-4 bg-black/70 text-white text-xs px-4 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        Godot Engine • GDScript • Time Limited Game Jam
+                    </div>
                 </div>
+
+                <!-- Card Content -->
                 <div class="p-8">
-                    <h4 class="font-semibold text-xl mb-3">One Trick Wizard (itch.io)</h4>
-                    <p class="text-zinc-600 dark:text-zinc-400 mb-6">
-                        A game I built in my free time over 2 weeks for PirateJam 17. Hosted live or for
-                        download on itch.io.
+                    <h4 class="font-semibold text-2xl mb-4">One Trick Wizard</h4>
+                    <p class="text-zinc-600 dark:text-zinc-400 mb-8 leading-relaxed">
+                        A 3D platformer built in 2 weeks for PirateJam 17.
                     </p>
+
                     <a href="https://gdzac.itch.io/one-trick-wizard" target="_blank"
-                        class="inline-block text-emerald-600 dark:text-emerald-400 hover:underline font-medium">
-                        Play on itch.io →
+                        class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-medium transition-all w-full justify-center">
+                        🎮 Play on itch.io
+                        <span class="text-xl transition-transform group-hover:translate-x-1">→</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Placeholder -->
+            <!-- Placeholder Card -->
             <div
-                class="bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700 card opacity-75">
-                <div class="h-48 bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center text-4xl">
-                    🚧
+                class="group bg-white dark:bg-zinc-800 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-700 card transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl opacity-75">
+                <div class="h-72 bg-zinc-200 dark:bg-zinc-700 flex items-center justify-center">
+                    <span class="text-7xl text-zinc-400">🚧</span>
                 </div>
                 <div class="p-8">
-                    <h4 class="font-semibold text-xl mb-3">More Projects Coming Soon</h4>
-                    <p class="text-zinc-600 dark:text-zinc-400">
-                        I'll be adding full-stack web apps, data tools, and fintech-related projects here as I build
-                        them.
+                    <h4 class="font-semibold text-2xl mb-4 text-zinc-400">More Projects Coming Soon</h4>
+                    <p class="text-zinc-500 dark:text-zinc-500 mb-8">
+                        Full-stack web apps, data tools, and fintech-related projects will appear here as I build them.
                     </p>
+                    <div class="text-zinc-400 text-sm">Coming soon</div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -152,10 +172,12 @@
                 <div>
                     <h3 class="text-2xl font-semibold mb-6">Other Strengths</h3>
                     <ul class="space-y-3 text-lg">
-                        <li class="flex items-center gap-3">✅ Problem-solving &amp; troubleshooting complex systems</li>
+                        <li class="flex items-center gap-3">✅ Problem-solving &amp; troubleshooting complex
+                            systems</li>
                         <li class="flex items-center gap-3">✅ Data analysis &amp; inventory management</li>
                         <li class="flex items-center gap-3">✅ User empathy &amp; requirements gathering</li>
-                        <li class="flex items-center gap-3">✅ Quick learner (Haskell, React, TypeScript planned)</li>
+                        <li class="flex items-center gap-3">✅ Quick learner (Haskell, React, TypeScript planned)
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -212,29 +234,34 @@
             <div>
                 <label class="block text-sm font-medium mb-2">Your Name</label>
                 {{ form.name(class="w-full px-6 py-4 bg-white dark:bg-zinc-800 border border-zinc-300
-                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors") }}
+                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors")
+                }}
             </div>
 
             <div>
                 <label class="block text-sm font-medium mb-2">Your Email Address</label>
                 {{ form.email(class="w-full px-6 py-4 bg-white dark:bg-zinc-800 border border-zinc-300
-                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors") }}
+                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors")
+                }}
             </div>
 
             <div>
                 <label class="block text-sm font-medium mb-2">Subject</label>
                 {{ form.subject(class="w-full px-6 py-4 bg-white dark:bg-zinc-800 border border-zinc-300
-                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors") }}
+                dark:border-zinc-700 rounded-2xl focus:outline-none focus:border-emerald-600 transition-colors")
+                }}
             </div>
 
             <div>
                 <label class="block text-sm font-medium mb-2">Message</label>
-                {{ form.message(rows="8", class="w-full px-6 py-4 bg-white dark:bg-zinc-800 border border-zinc-300
+                {{ form.message(rows="8", class="w-full px-6 py-4 bg-white dark:bg-zinc-800 border
+                border-zinc-300
                 dark:border-zinc-700 rounded-3xl focus:outline-none focus:border-emerald-600 transition-colors
                 resize-y") }}
             </div>
 
-            {{ form.submit(class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl font-semibold
+            {{ form.submit(class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-2xl
+            font-semibold
             text-lg transition-all cursor-pointer") }}
         </form>
     </div>
