@@ -5,7 +5,6 @@ function initTheme() {
 
     if (!toggleBtn || !icon) return;
 
-    // Set initial theme
     if (localStorage.theme === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -28,11 +27,10 @@ function initTheme() {
     });
 }
 
-// Hamburger Dropdown Menu
+// Hamburger Dropdown
 function initHamburger() {
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('dropdown-menu');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
 
     if (!hamburger || !menu) return;
 
@@ -40,46 +38,75 @@ function initHamburger() {
 
     function toggleMenu() {
         isOpen = !isOpen;
-
         if (isOpen) {
             menu.classList.remove('hidden');
-            // Small delay for smooth animation
-            setTimeout(() => {
-                menu.style.transform = 'scale(1)';
-                menu.style.opacity = '1';
-            }, 10);
+            setTimeout(() => menu.style.transform = 'scale(1)', 10);
         } else {
             menu.style.transform = 'scale(0.95)';
-            menu.style.opacity = '0';
-            setTimeout(() => {
-                menu.classList.add('hidden');
-            }, 200);
+            setTimeout(() => menu.classList.add('hidden'), 200);
         }
     }
 
     hamburger.addEventListener('click', (e) => {
-        e.stopPropagation();   // Prevent click from immediately closing
+        e.stopPropagation();
         toggleMenu();
     });
 
-    // Close when clicking outside
     document.addEventListener('click', (e) => {
         if (isOpen && !menu.contains(e.target) && !hamburger.contains(e.target)) {
             toggleMenu();
         }
     });
 
-    // Close when clicking any link inside the menu
-    const links = menu.querySelectorAll('a');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            if (isOpen) toggleMenu();
-        });
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => isOpen && toggleMenu());
     });
+}
+
+// Reliable Scroll Animations - Manual check on load + scroll
+function initScrollAnimations() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+
+    function checkVisibility() {
+        elements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Element is in view
+            if (rect.top < windowHeight * 0.85 && rect.bottom > 0) {
+                if (!el.classList.contains('visible')) {
+                    el.classList.add('visible');
+                }
+            } else {
+                el.classList.remove('visible');
+            }
+        });
+    }
+
+    // Initial check after page is fully rendered
+    setTimeout(() => {
+        checkVisibility();
+    }, 150);
+
+    // Check on scroll (throttled)
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                checkVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Also check on resize
+    window.addEventListener('resize', checkVisibility);
 }
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initHamburger();
+    initScrollAnimations();
 });
